@@ -1,0 +1,18 @@
+<main>
+
+  <h2>Jobs:</h2>
+
+<app-job-title-list></app-job-title-list>
+
+  <ng-container *ngIf="jobs$ |async as jobs">
+
+  <article *ngFor="let job of jobs">
+  <h4>
+    company name: {{job.company}}
+  </h4>
+  <h4> title {{job.title}}</h4>
+  </article>
+</ng-container>
+
+</main>
+jenny@jobsglobal.com
