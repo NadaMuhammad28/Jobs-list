@@ -1,27 +1,60 @@
-# Assesment
+# Angular Project README
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Modules and Structure
 
-## Code scaffolding
+The project follows a modular structure for better organization and maintainability. Key modules include:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `AppModule`: The root module of the application.
+- `SharedModule`: Contains shared components, directives, and pipes used across the application.
+- `JosModule`: Contains necessary components for this featyre.
 
-## Build
+### Lazy Loading
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Lazy loading is implemented to improve application performance by loading modules asynchronously when needed. Key lazy-loaded modules include:
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Reactive Forms
 
-## Running end-to-end tests
+Reactive forms are used for form handling, providing a more robust and scalable approach compared to template-driven forms. Features include:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Form creation using `FormBuilder`.
+- Validation using built-in validators and custom validators.
+- Form submission and data manipulation using observables.
 
-## Further help
+### HTTP Error Handling Interceptor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+An HTTP interceptor is implemented to handle errors globally across the application. Features include:
+
+- Intercepting HTTP requests and responses.
+- Handling HTTP errors such as 401 and 500.
+- Displaying error messages to the user using notification components.
+
+### Filtering and Reactive Programming
+
+Filtering functionality is implemented using reactive programming with subjects. Features include:
+
+- Communication between components using input and output properties.
+- Data filtering based on user input using reactive forms.
+- Dynamic updating of the UI based on filtered data.
+
+### Bootstrap Styling
+
+Bootstrap is used for styling to ensure a responsive and visually appealing user interface. Features include:
+
+- Utilizing Bootstrap classes for layout, typography, and components.
+- Responsive design for optimal viewing across different devices.
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository: `git clone [repository-url]`.
+2. Navigate to the project directory: `cd [project-directory]`.
+3. Install dependencies: `npm install`.
+4. Start the development server: `ng serve`.
+
+
+
