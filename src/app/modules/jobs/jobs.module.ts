@@ -2,14 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { JobsRoutingModule } from './jobs-routing.module';
-import { JobListComponent } from './job-list/job-list.component';
-import { JobTitleListComponent } from './job-title-list/job-title-list.component';
+import { JobTitleListComponent } from './components/job-title-filter/job-title-list.component';
+import { JobsListComponent } from './components/job-list/job-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { JobItemComponent } from './components/job-item/job-item.component';
 
 @NgModule({
-  declarations: [JobListComponent, JobTitleListComponent],
+  declarations: [JobsListComponent, JobTitleListComponent, JobItemComponent],
   imports: [
     CommonModule,
-    JobsRoutingModule
-  ],exports:[JobListComponent,JobTitleListComponent ]
+    JobsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
+  ],
 })
 export class JobsModule { }

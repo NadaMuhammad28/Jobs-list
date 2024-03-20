@@ -3,25 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JobListComponent } from './modules/jobs/job-list/job-list.component';
 import { CommonModule } from '@angular/common';
 
-import {HttpClientModule} from '@angular/common/http'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
+import { SharedModule } from './modules/shared/shared.module';
+import { ErrorHandlerInterceptor } from './interceptors/Http-error-handler.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    JobListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+   SharedModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,
+    useClass:ErrorHandlerInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

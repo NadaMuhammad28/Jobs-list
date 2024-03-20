@@ -1,0 +1,17 @@
+<section class=" mt-5">
+
+  <!-- Job Title List Component -->
+  <app-job-title-list (titleSelected)="onSelectedJobTitleChange($event)"></app-job-title-list>
+
+  <!-- Loader Component -->
+
+  <ng-container *ngIf="(jobs$ | async) as jobs; else loading">
+    <article *ngFor="let job of jobs" class="card mb-3">
+   <app-job-item [job]="job"></app-job-item>
+    </article>
+  </ng-container>
+
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
+</section>

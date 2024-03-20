@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobListComponent } from './modules/jobs/job-list/job-list.component';
+import { Error404Component } from './modules/shared/pages/error/error.component';
 
 const routes: Routes = [
-  {path:'', component:JobListComponent}
+  { path: '', loadChildren: () => import('src/app/modules/jobs/jobs.module').then(m => m.JobsModule) }
+
+  ,{ path: '**', component:Error404Component },
+
 ];
 
 @NgModule({
